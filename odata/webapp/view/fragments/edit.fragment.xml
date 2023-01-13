@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+<Dialog title="Create Business Partner">
+<VBox class="sapUiSmallMargin">
+<f:Form editable="true">
+<f:layout>
+<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+</f:layout>
+<f:formContainers>
+<f:FormContainer>
+<f:formElements>
+<f:FormElement label="FirstName">
+<f:fields>
+<Input value="{Settings>/SelectedObject/Firstname}" id="editfname"/>
+</f:fields>
+</f:FormElement>
+
+<f:FormElement label="LastName">
+<f:fields>
+<Input value="{Settings>/SelectedObject/Lastname}" id="editlname"/>
+</f:fields>
+</f:FormElement>
+
+<f:FormElement label="Age">
+<f:fields>
+<Input value="{Settings>/SelectedObject/Age}" id="editaage"/>
+</f:fields>
+</f:FormElement>
+
+<f:FormElement label="Role">
+<f:fields>
+<Input value="{Settings>/SelectedObject/Role}" id="editflname"/>
+</f:fields>
+</f:FormElement>
+
+<f:FormElement label="Activate">
+<f:fields>
+<Input value="{path: 'Settings>/SelectedObject/Active', formatter: '.formatter.tfcheck' }" />
+</f:fields>
+
+</f:FormElement>
+
+
+
+</f:formElements>
+</f:FormContainer>
+</f:formContainers>
+</f:Form>
+</VBox>
+<buttons>
+<Button text="Cancel" press="onCancelEdit"/>
+<Button text="Update" type="Emphasized" press="onUpdate"/>
+</buttons>
+</Dialog>
+</core:FragmentDefinition>

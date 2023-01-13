@@ -1,0 +1,96 @@
+<mvc:View
+    controllerName="odata.controller.Worklist"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+
+    xmlns:f="sap.ui.layout.form"
+    xmlns:semantic="sap.f.semantic">
+
+    <Page id="page">
+
+        <content>
+
+        
+  <Table
+                id="table"
+                mode="SingleSelect"
+                width="auto"
+                items="{
+                    path: '/UXTeam',
+                    sorter: {
+                        path: 'Firstname',
+                        descending: false
+                    }
+                }"
+                noDataText="{worklistView>/tableNoDataText}"
+                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+                growing="true"
+                growingScrollToLoad="true"
+                updateFinished=".onUpdateFinished">
+
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title
+                            id="tableHeader"
+                            text="{worklistView>/worklistTableTitle}"
+                            level="H3"/>
+                        <ToolbarSpacer />
+                        <SearchField width="20%" class="sapUiSmallMargin" />
+                        <Button icon="sap-icon://edit" press="handleEdit"/>
+                        <Button icon="sap-icon://add" press="handleCreation" />
+                        
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column id="nameColumn">
+                        <Text text="Firstname" id="nameColumnTitle"/>
+                    </Column>
+                    <Column>
+                        <Text text="Lastname" />
+                    </Column>
+                    <Column>
+                        <Text text="Age" />
+                    </Column>
+                    <Column>
+                        <Text text="Role" />
+                    </Column>
+                    <Column>
+                        <Text text="Salary" />
+                    </Column>
+                     <Column>
+                        <Text text="Active" />
+                    </Column>
+                      <Column>
+                        <Text  />
+                    </Column>
+                      <Column>
+                        <Text  />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem
+                        type="Navigation"
+                        press=".onPress">
+                        <cells>
+                            <ObjectIdentifier title="{Firstname}"/>
+                            <Text text="{Lastname}" />
+                            <Text text="{Age}" />
+                             <Text text="{Role}" />
+                            <Text text="{Salary}" />
+                            <Text text="{ path: 'Active',  formatter: '.formatter.fooBar' }"    />
+                             <Button icon="sap-icon://activate" text="Activate" press="Aktiviraj" />
+                             <Button icon="sap-icon://delete" press="handleDelete"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+          
+        </content>
+
+
+
+    </Page>
+
+</mvc:View>

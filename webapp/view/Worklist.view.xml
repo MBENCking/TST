@@ -1,0 +1,82 @@
+<mvc:View
+    controllerName="smarttable.controller.Worklist"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:semantic="sap.f.semantic">
+
+    <Page id="page">
+
+   
+
+        <content>
+
+            	<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="C_PurchaseOrderFs" persistencyKey="SmartFilter_Explored" basicSearchFieldName="Bukrs" enableBasicSearch="true" >
+			
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+				<smartFilterBar:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartFilterBar:layoutData>
+			</smartFilterBar:SmartFilterBar>
+
+                	<smartTable:SmartTable id="LineItemsSmartTable" entitySet="C_PurchaseOrderFs" smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items"
+                        showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding"  editTogglable="true" showFullScreenButton="true" initiallyVisibleFields="PurchaseOrder,
+PurchaseOrder_Text,
+PurchaseOrderType,
+PurchaseOrderType_Text,
+PurchaseOrderSubtype,
+PurchasingDocumentOrigin,
+PurchasingDocumentCategory,
+PurchasingDocumentType,
+CreatedByUser,
+CreationDate
+PurchaseOrderDate,
+Language,
+PurchasingDocumentDeletionCode,
+ReleaseIsNotCompleted,
+PurchasingCompletenessStatus,
+CompanyCode,
+CompanyCodeName,
+PurchasingOrganization,
+PurchasingOrganizationName,
+PurchasingGroup,
+PurchasingGroupName,
+Supplier,
+SupplierName,
+ManualSupplierAddressID,
+SupplierAddressID,
+SupplyingSupplier,
+SupplyingPlant,
+InvoicingParty,
+PaymentTerms,
+PaymentTerms_Text,
+CashDiscount1Days,
+CashDiscount2Days,
+NetPaymentDays,
+CashDiscount1Percent,
+CashDiscount2Percent,
+PaymentTermsDescription,
+IncotermsClassification,
+IncotermsClassification_Text,
+IncotermsTransferLocation,
+DocumentCurrency,
+PurchaseOrderNetAmount,
+PurchasingDocumentStatus,
+UserFullName,
+PurchasingDocumentStatusName">
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+          
+
+
+        </content>
+
+    
+
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://s4hdemo2020http:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://s4hdemo2020http:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://s4hdemo2020http:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://s4hdemo2020http:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://s4hdemo2020http:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://s4hdemo2020http:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://s4hdemo2020http:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://s4hdemo2020http:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://s4hdemo2020http:44300/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_z_srv1" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="zc_azper_realType" sap:label="zc_azper_real" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DevreqId"/>
+                </Key>
+                <Property Name="DevreqId" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Devcode" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="Dev code" sap:quickinfo="30 Characters"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:text="Customertxt" sap:label="Custumer" sap:quickinfo="Count parameters" sap:value-list="standard"/>
+                <Property Name="Customertxt" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="30 Characters" sap:heading="" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ProjectName" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:text="ProjectCodetxt" sap:label="Project Name" sap:quickinfo="Count parameters" sap:value-list="standard"/>
+                <Property Name="ProjectCodetxt" Type="Edm.String" MaxLength="70" sap:display-format="UpperCase" sap:label="Char 70" sap:quickinfo="Character field, length 70" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SapModule" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Module" sap:quickinfo="" sap:value-list="fixed-values"/>
+                <Property Name="DevreqName" Type="Edm.String" MaxLength="100" sap:display-format="UpperCase" sap:label="Devreq Name" sap:quickinfo="Character 100"/>
+                <Property Name="ResponsibleCons" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Responsible Cons" sap:quickinfo="Character Field of Length 12"/>
+                <Property Name="Duedate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Due date" sap:quickinfo="Field of type DATS"/>
+                <Property Name="Note" Type="Edm.String" MaxLength="100" sap:display-format="UpperCase" sap:label="Note" sap:quickinfo="Character 100"/>
+                <Property Name="SpecUrl" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="SpecUrl" sap:quickinfo="URL name"/>
+                <Property Name="TrelloCardId" Type="Edm.String" MaxLength="50" sap:label="TrelloCardId" sap:quickinfo="Comment"/>
+                <Property Name="DevreqStatus" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="DevreqStatus" sap:quickinfo="" sap:value-list="fixed-values"/>
+                <Property Name="ChangedOn" Type="Edm.DateTimeOffset" Precision="7" sap:label="Changed On" sap:quickinfo="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="zi_custommer_helpType" sap:label="INTERFACE VIEW" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CustomerIds"/>
+                </Key>
+                <Property Name="CustomerIds" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Counter" sap:quickinfo="Count parameters"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="30 Characters" sap:heading=""/>
+                <Property Name="Prefix" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Char15" sap:quickinfo="Char 15"/>
+            </EntityType>
+            <EntityType Name="ZI_MODULE_HELPType" sap:label="Account Type" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="AccountType"/>
+                </Key>
+                <Property Name="AccountType" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="UpperCase" sap:label=""/>
+            </EntityType>
+            <EntityType Name="zi_project_helpType" sap:label="INTERFACE VIEW" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ProjectIds"/>
+                </Key>
+                <Property Name="ProjectIds" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Counter" sap:quickinfo="Count parameters"/>
+                <Property Name="ProjectCode" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Counter" sap:quickinfo="Count parameters"/>
+                <Property Name="ProjectName" Type="Edm.String" MaxLength="70" sap:display-format="UpperCase" sap:label="Char 70" sap:quickinfo="Character field, length 70"/>
+                <Property Name="CustomerId" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Counter" sap:quickinfo="Count parameters"/>
+                <Property Name="Active" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Single-Character Flag" sap:heading=""/>
+                <Property Name="BoardId" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="30 Characters" sap:heading=""/>
+            </EntityType>
+            <EntityType Name="ZI_status_helpType" sap:label="Account Type" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="StatusType"/>
+                </Key>
+                <Property Name="StatusType" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label=""/>
+            </EntityType>
+            <EntityContainer Name="cds_z_srv1_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="zc_azper_real" EntityType="cds_z_srv1.zc_azper_realType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="zi_custommer_help" EntityType="cds_z_srv1.zi_custommer_helpType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_MODULE_HELP" EntityType="cds_z_srv1.ZI_MODULE_HELPType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="zi_project_help" EntityType="cds_z_srv1.zi_project_helpType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZI_status_help" EntityType="cds_z_srv1.ZI_status_helpType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="cds_z_srv1.zc_azper_realType/CustomerName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Custumer"/>
+                        <PropertyValue Property="CollectionPath" String="zi_custommer_help"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CustomerName"/>
+                                    <PropertyValue Property="ValueListProperty" String="CustomerIds"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Prefix"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_z_srv1.zc_azper_realType/ProjectName" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Project Name"/>
+                        <PropertyValue Property="CollectionPath" String="zi_project_help"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ProjectName"/>
+                                    <PropertyValue Property="ValueListProperty" String="ProjectIds"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Active"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="BoardId"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CustomerId"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ProjectCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ProjectName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_z_srv1.zc_azper_realType/SapModule" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Module"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_MODULE_HELP"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SapModule"/>
+                                    <PropertyValue Property="ValueListProperty" String="AccountType"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_z_srv1.zc_azper_realType/DevreqStatus" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="DevreqStatus"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_status_help"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="DevreqStatus"/>
+                                    <PropertyValue Property="ValueListProperty" String="StatusType"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_z_srv1.cds_z_srv1_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_z_srv1.cds_z_srv1_Entities/zc_azper_real" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://s4hdemo2020http:44300/sap/opu/odata/sap/ZSRV123/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://s4hdemo2020http:44300/sap/opu/odata/sap/ZSRV123/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

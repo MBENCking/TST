@@ -1,0 +1,28 @@
+<mvc:View
+    controllerName="odata.controller.Object"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}">
+
+        <semantic:titleHeading>
+            <Title
+                text="{Firstname}"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:headerContent>
+               
+          </semantic:headerContent>
+       
+    
+ 
+    </semantic:SemanticPage>
+
+</mvc:View>
